@@ -1,4 +1,6 @@
-CREATE TABLE SPAR(  
+create DATABASE Production;
+USE Production;
+CREATE TABLE SPAR(
     `Kod_kreskowy` varchar(13) NOT NULL,
     `Nazwa_towaru` text DEFAULT NULL,
     `Cena` float DEFAULT NULL,
