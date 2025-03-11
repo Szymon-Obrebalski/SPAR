@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine, text
-from imports.passwords import login,password
+from passwords import login,password
 
 def get_engine():
-    return create_engine(f'mysql+pymysql://{login}:{password}@192.168.0.3/Production')
+    return create_engine(f'mysql+pymysql://{login}:{password}@192.168.0.3/')
 def execute_test_query(query: str):
     engine = get_engine()
     with engine.connect() as conn:
@@ -11,7 +11,7 @@ def execute_test_query(query: str):
 
 PRIORITIZE_PRODUCTS = execute_test_query(text("""
                 SELECT CONCAT('[''', GROUP_CONCAT(Nazwa_towaru SEPARATOR ''','''), ''']')
-                FROM SPAR;
+                FROM Production.SPAR;
 """))[0][0].strip("[]'").split("','")
 
 PRIORITIZE_PRODUCTS = list(dict.fromkeys(x for x in PRIORITIZE_PRODUCTS if x))
