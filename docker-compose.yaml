@@ -1,0 +1,11 @@
+services:
+  spar:
+    image: spar
+    container_name: Spar
+    volumes:
+      - .:/app
+      # - /volume1/docker/spar/logs:/app/logs
+    restart: always
+    ports:
+      - "8127:8000"
+    env_file: ".env"
