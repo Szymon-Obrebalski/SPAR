@@ -46,7 +46,7 @@ Zdefiniuj zmienne środowiskowe:
 Zbuduj i uruchom kontener Docker:
 
 ```bash
-docker build -t spar-assistant .
+docker build -t spar .
 docker compose up
 ```
 

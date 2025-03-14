@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, text
-from passwords import login,password
+from imports.passwords import login,password
 
 def get_engine():
     return create_engine(f'mysql+pymysql://{login}:{password}@192.168.0.3/')
